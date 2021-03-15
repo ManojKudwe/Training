@@ -119,7 +119,7 @@
 
 			<div class="contect_text">So we can successfully match your details with suitable people, we first need to collect some information about you. Read each question carfully and  select or place a tick in the box for each of your characteristics. Please answer as honestly as you can, otherwise you may be disappointed with your matches and they with you.</div>
 
-			<form name="myForm" action="partners_preference_form.html" onsubmit="return validateForm()" method="post">
+			<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
 			<div class="form_container_block">
 				<ul>
 				
@@ -158,7 +158,7 @@ function validateForm()  {
   var df=Math.abs(parseInt(am)-parseInt(mn.value));
   var dy=(parseFloat(13-df)/10)+cy;
 
-  ag.disabled=true;
+  
   if (x==null||x == "") {
     alert("First Name must be filled out!");
     return false;
@@ -171,86 +171,70 @@ function validateForm()  {
   }else if(ph!=null || ph!=""){
     if(ph.match(phn)){  
      
-   }else{
+    }else{
         alert("Invalid Phone No!");
-    return false;
-	   }
-   }
+        return false;
+	     }
+  }
    if(ofi==null || ofi==""){
     alert("Office No must be filled out!");
     return false;
   }else if(ofi!=null || ofi!=""){
     if(ofi.match(phn)){  
      
-   }else{
+    }else{
         alert("Invalid Office No!");
-    return false;
-	   }
-}
+        return false;
+	     }
+  }
     if(em==null || em==""){
     alert("Email must be filled out!");
     return false;
-  }else if(em.match(emf))
-     {
+  }else if(em.match(emf)){
      
-	 }
-	 else
-	 {
-	  alert("You have entered an invalid email address!");
-	  return false;
-	  }
-	if(pw==null || pw==""){
-    alert("Password must be filled out!");
-    return false;
-	}
-else if(pw.match(psw))
-     {
+  }else{
+   alert("You have entered an invalid email address!");
+   return false;
+  }
+   if(pw==null || pw==""){
+   alert("Password must be filled out!");
+   return false;
+  }
+   else if(pw.match(psw)){
      
-	 }
-	 else
-	 {
-	 alert("Please enter alphanumeric password, range between 8-12!");
-	 return false;
-	 }
-     if(cpw==pw)
-     {
+  }else{
+   alert("Please enter alphanumeric password, range between 8-12!");
+   return false;
+  }
+   if(cpw==pw){
      
-	 }
-	 else
-	 {
-	 alert("Please Confirm password!");
-	 return false;
-	 }
-	  if(yr.value=="1"){
-    alert("please select Date of Birth!");
-    return false;
-	 }else{
-		 ag.disabled=false;
-		 ag.value=dy;
-		 ag.disabled=true;
-		 }
-	  if(ra==true || rb==true)
-     {
-     
-	 }
-	 else
-	 {
-	 alert("Please select gender!");
-	 return false;
-	 }
-	  if(ca==true || cb==true||cc==true)
-     {
-     
-	 }
-	 else
-	 {
-	 alert("Please select atleast 1 Interest!");
-	 return false;
-	 }
-	 if(tx==null || tx==""){
-    alert("Please write Something about You!");
-    return false;
-	}
+  }
+   else{
+   alert("Please Confirm password!");
+	return false;
+  }
+   if(yr.value=="1"){
+   alert("please select Date of Birth!");
+   return false;
+  }else{
+   ag.value=dy;
+  }
+   if(ra==true || rb==true){
+  }
+   else{
+   alert("Please select gender!");
+   return false;
+  }
+   if(ca==true || cb==true||cc==true){
+  }
+   else{
+   alert("Please select atleast 1 Interest!");
+   return false;
+  }
+   if(tx==null || tx==""){
+   alert("Please write Something about You!");
+   return false;
+  }
    
 }
 </script>
@@ -385,7 +369,7 @@ else if(pw.match(psw))
 					<li class="fileds">
 						<div class="age_fileds">
 							<label>Age</label>
-							<input id="age" type="text" value="" /> 
+							<input id="age" type="text" value="" disabled/> 
 						</div>
 						<div class="gender_fileds">
 							<label>Gender</label>
