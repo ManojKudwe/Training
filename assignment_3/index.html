@@ -34,7 +34,8 @@
 
 <script type="text/javascript">
       $(function() {
-  
+
+   $("#myForm").submit(function() {
          var error_fname = false;
          var error_sname = false;
 		 var error_phn = false;
@@ -46,93 +47,18 @@
 		 var error_rad = false;
 		 var error_int = false;
 		 var error_ay = false;
-        
-        
-        
-         
-         function check_fname() {
-            var fname = $("#firstname").val();
-            if (fname !== '') {
-          
-            } else {
-               alert("firstname should be filled out!");
-              error_fname = true;
-            }
-         }
-
-         function check_lname() {
-            
-            var sname = $("#lastname").val();
-            if (sname !== '') {
-              
-            } else {
-                alert("lastname should be filled out!");
-               error_sname = true;
-            }
-         }
-
-
-		  function check_phone() {
-            var pattern =  /^\d{10}$/;
-            var phn = $("#phone").val();
-            if (pattern.test(phn) && phn !== '') {
-            } else {
-                alert("Please enter valid Phone No!");
-               error_phn = true;
-            }
-         }
-
-
-		 function check_ofc() {
-            var pattern =  /^\d{10}$/;
-            var ofc = $("#office").val();
-            if (pattern.test(ofc) && ofc !== '') {
-
-            } else {
-                alert("Please enter valid office No!");
-               error_office = true;
-            }
-         }
-
-
-		 function check_email() {
-            var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            var em = $("#email").val();
-            if (pattern.test(em) && em !== '') {
-
-            } else {
-                alert("Please enter valid Email Id!");
-               error_email = true;
-            }
-         }
-
-
-		 function check_pw() {
-            var pattern = /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9]{8,12})+$/;
-            var pw = $("#password").val();
-            if (pattern.test(pw) && pw !== '') {
-
-            } else {
-                alert("Please enter alphanumeric password, range between 8-12!");
-               error_pw = true;
-            }
-         }
-
-
-		  function check_cpw() {
-            var pw = $("#password").val();
-            var cpw = $("#cpassword").val();
-            if (cpw===pw) {
-
-            } else {
-                alert("Please confirm password!");
-               error_cpw = true;
-            }
-         }
-
-
-         function check_age() {
-            var age = $("#year").val();
+         var fname = $("#firstname").val();
+         var sname = $("#lastname").val();
+		 var phpattern =  /^\d{10}$/;
+         var phn = $("#phone").val();
+		 var ofpattern =  /^\d{10}$/;
+         var ofc = $("#office").val();
+		 var empattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+         var em = $("#email").val();
+		 var pwpattern = /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9]{8,12})+$/;
+         var pw = $("#password").val();
+		 var cpw = $("#cpassword").val();
+	 var age = $("#year").val();
 			var mn = $("#month").val();
 			var agev = $("#age");
 			var d = new Date();
@@ -141,83 +67,130 @@
 			var cy=parseInt(n)-parseInt(age)-1;
 			var df=Math.abs(parseInt(am)-parseInt(mn));
 			var dy=(parseFloat(13-df)/10)+cy;
+	 var ra = $("#residence1[type='radio']:checked");
+         var rb = $("#residence2[type='radio']:checked");
+         var ca = $("#checkbox_sample18[type='checkbox']:checked");
+         var cb = $("#checkbox_sample19[type='checkbox']:checked");
+	 var cc = $("#checkbox_sample20[type='checkbox']:checked");
+	 var ay= $("#ay").val();
+		 
+         
+        
+            if (fname !== '') {
+          
+            } else {
+              error_fname = true;
+            }
+         
+
+         
+            if (sname !== '') {
+              
+            } else {
+               error_sname = true;
+            }
+         
+
+
+            if (phpattern.test(phn) && phn !== '') {
+            } else {
+               error_phn = true;
+            }
+         
+
+
+            if (ofpattern.test(ofc) && ofc !== '') {
+
+            } else {
+               error_office = true;
+            }
+         
+
+
+            if (empattern.test(em) && em !== '') {
+
+            } else {
+               error_email = true;
+            }
+         
+
+
+            if (pwpattern.test(pw) && pw !== '') {
+
+            } else {
+               error_pw = true;
+            }
+
+
+
+            if (cpw===pw) {
+
+            } else {
+               error_cpw = true;
+            }
+         
+
+
             if (age !== '1') {
 				
 				agev.val(dy);
 				
           
             } else {
-               alert("please select Date of Birth!");
               error_age = true;
             }
-         }
+         
 
 
-		 
-		  function check_gen() {
-            var ra = $("#residence1[type='radio']:checked");
-            var rb = $("#residence2[type='radio']:checked");
             if (ra.length > 0||rb.length > 0) {
 
             } else {
-                alert("Please select gender!");
                error_rad = true;
             }
-         }
+         
 
-
-		 function check_int() {
-            var ca = $("#checkbox_sample18[type='checkbox']:checked");
-            var cb = $("#checkbox_sample19[type='checkbox']:checked");
-			var cc = $("#checkbox_sample20[type='checkbox']:checked");
+		 
             if (ca.length > 0||cb.length > 0 || cc.length > 0){
 
             } else {
-                alert("Please select atleast 1 Interest!");
                error_int = true;
             }
-         }
 
 
-		 function check_ay() {
-            var ay= $("#ay").val();
             if (ay !== '') {
           
             } else {
-               alert("Please Write something about You!");
               error_ay = true;
+            }
+         
+
+ if (error_fname === true || error_sname === true || error_phn === true || error_office === true || error_email === true || error_pw === true  || error_cpw === true || error_age === true || error_rad === true || error_int === true || error_ay === true) {
+              
+			  if (error_fname === true) {
+               alert("firstname should be filled out!");
+            }else if (error_sname === true) {
+            alert("lastname should be filled out!"); 
+            }else if (error_phn === true) {
+            alert("Please enter valid Phone No!"); 
+            }else if (error_office === true) {
+            alert("Please enter valid office No!"); 
+            }else if (error_email === true) {
+            alert("Please enter valid Email Id!"); 
+            }else if (error_pw === true) {
+            alert("Please enter alphanumeric password, range between 8-12!"); 
+            }else if (error_cpw === true) {
+            alert("Please confirm password!"); 
+            }else if (error_age === true) {
+            alert("please select Date of Birth!"); 
+            }else if (error_rad === true) {
+            alert("Please select gender!"); 
+            }else if (error_int === true) {
+            alert("Please select atleast 1 Interest!"); 
+            }else if (error_ay === true) {
+            alert("Please Write something about You!"); 
             }
          }
 
-         
-
-         $("#myForm").submit(function() {
-            error_fname = false;
-            error_sname = false;
-			error_phn = false;
-			error_office = false;
-			error_email = false;
-			error_pw = false;
-			error_cpw = false;
-			error_age = false;
-			error_rad = false;
-			error_int = false;
-			error_ay = false;
-           
-
-            check_fname();
-            check_lname();
-			check_phone();
-			check_ofc();
-			check_email();
-			check_pw();
-			check_cpw();
-			check_age();
-			check_gen();
-			check_int();
-			check_ay();
-
-            
 
             if (error_fname === false && error_sname === false && error_phn === false && error_office === false && error_email === false && error_pw === false  && error_cpw === false && error_age === false && error_rad === false && error_int === false && error_ay === false) {
                alert("Registration Successfull");
