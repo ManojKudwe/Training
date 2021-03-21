@@ -148,6 +148,7 @@ function validateForm()  {
   var cc = document.getElementById("checkbox_sample20").checked;
   var tx = document.getElementById("textarea").value;
   var phn = /^\d{10}$/;
+  var ofc = /^[0-9]+$/;
   var em = document.forms["myForm"]["email"].value;
   var emf = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var psw = /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9]{8,12})+$/; 
@@ -180,7 +181,7 @@ function validateForm()  {
     alert("Office No must be filled out!");
     return false;
   }else if(ofi!=null || ofi!=""){
-    if(ofi.match(phn)){  
+    if(ofi.match(ofc)){  
      
     }else{
         alert("Invalid Office No!");
