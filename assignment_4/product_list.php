@@ -117,7 +117,7 @@ session_start();
 				 </div>
 					</li> -->
 					<li><a href="add_product.php">Add products</a></li>
-					<li><button type="submit" value="delete" name="delete" style="background-color: #9fbc35; border-color:transparent; padding: 11px; color: #fff; width: 130px; display: block;text-align: center; font-size: 18px; line-height: 25px; font-family: 'robotoslab-bold'; border-radius: 5px; margin: 0 auto; text-decoration: none; ">delete</button></li>
+					<li><button type="submit" value="delete" name="delete" onclick="return confm()" style="background-color: #9fbc35; border-color:transparent; padding: 11px; color: #fff; width: 130px; display: block;text-align: center; font-size: 18px; line-height: 25px; font-family: 'robotoslab-bold'; border-radius: 5px; margin: 0 auto; text-decoration: none; ">delete</button></li>
 				</ul>
 			</div>
 
@@ -171,7 +171,7 @@ while($data = mysqli_fetch_array($records))
 	<td width="25%">
 	<div class="buttons">
     <a class="btn btn_edit" href="editp.php?id=<?php echo $data['pname']; ?>">Edit</a>
-    <a class="btn btn_delete" href="deletep.php?id=<?php echo $data['pname']; ?>">Delete</a>
+    <a class="btn btn_delete" onclick="return confm()" href="deletep.php?id=<?php echo $data['pname']; ?>">Delete</a>
 	</div>
 	</td>
   </tr>	
@@ -217,6 +217,17 @@ while($data = mysqli_fetch_array($records))
 $("#checkAl").click(function () {
 $('input:checkbox').not(this).prop('checked', this.checked);
 });
+</script>
+<script>
+function confm(){
+var c=confirm("Do You want to Delete selected Record");
+if( c == true ){
+return true;
+}
+else{
+return false;
+}
+}
 </script>
 			</form>
 		</div>
