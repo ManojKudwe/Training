@@ -132,7 +132,7 @@
 <script>
 function validateForm()  {
 		 var error_fname = false;
-         var error_sname = false;
+         	 var error_sname = false;
 		 var error_phn = false;
 		 var error_office = false;
 		 var error_email = false;
@@ -171,7 +171,7 @@ function validateForm()  {
   var dy=(parseFloat(13-df)/10)+cy;
 
   
-			if (fname !== '') {
+	   if (fname !== '') {
               error_fname = false;
             } else {
               error_fname = true;
@@ -229,7 +229,7 @@ function validateForm()  {
 
             if (yr.value !== '1') {
 				error_age = false;
-				ag.value=dy;
+	       ag.value=dy;
 				
             } else {
               error_age = true;
@@ -259,7 +259,7 @@ function validateForm()  {
             }
          
               
-			if (error_fname === true) {
+	    if (error_fname === true) {
             alert("Please enter First name!");
             }else if (error_sname === true) {
             alert("Please enter Last name!"); 
