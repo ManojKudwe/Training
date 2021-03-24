@@ -34,10 +34,9 @@
 
 <script type="text/javascript">
       $(function() {
-
-   $("#myForm").submit(function() {
-         var error_fname = false;
-         var error_sname = false;
+  
+        	 var error_fname = false;
+        	 var error_sname = false;
 		 var error_phn = false;
 		 var error_office = false;
 		 var error_email = false;
@@ -47,18 +46,96 @@
 		 var error_rad = false;
 		 var error_int = false;
 		 var error_ay = false;
-         var fname = $("#firstname").val();
-         var sname = $("#lastname").val();
-		 var phpattern =  /^\d{10}$/;
-         var phn = $("#phone").val();
-		 var ofpattern =  /^[0-9]+$/;
-         var ofc = $("#office").val();
-		 var empattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-         var em = $("#email").val();
-		 var pwpattern = /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9]{8,12})+$/;
-         var pw = $("#password").val();
-		 var cpw = $("#cpassword").val();
-	 var age = $("#year").val();
+
+        
+        
+        
+         
+         function check_fname() {
+            var fname = $("#firstname").val();
+			
+            if (fname !== '') {
+             $("#fn").css("visibility","hidden")
+            } else {
+			   $("#fn").css("visibility","visible")
+              error_fname = true;
+            }
+         }
+
+         function check_lname() {
+            
+            var sname = $("#lastname").val();
+            if (sname !== '') {
+              $("#ln").css("visibility","hidden")
+            } else {
+                $("#ln").css("visibility","visible")
+               error_sname = true;
+            }
+         }
+
+
+		  function check_phone() {
+            var pattern =  /^\d{10}$/;
+            var phn = $("#phone").val();
+            if (pattern.test(phn) && phn !== '') {
+		$("#pn").css("visibility","hidden")
+            } else {
+                 $("#pn").css("visibility","visible")
+               error_phn = true;
+            }
+         }
+
+
+		 function check_ofc() {
+            var pattern =  /^[0-9]+$/;
+            var ofc = $("#office").val();
+            if (pattern.test(ofc) && ofc !== '') {
+		$("#ofn").css("visibility","hidden")
+            } else {
+                 $("#ofn").css("visibility","visible")
+               error_office = true;
+            }
+         }
+
+
+		 function check_email() {
+            var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var em = $("#email").val();
+            if (pattern.test(em) && em !== '') {
+		$("#em").css("visibility","hidden")
+            } else {
+                $("#em").css("visibility","visible")
+               error_email = true;
+            }
+         }
+
+
+		 function check_pw() {
+            var pattern = /^(?=.*[a-zA-Z])(?=.*[0-9])([a-zA-Z0-9]{8,12})+$/;
+            var pw = $("#password").val();
+            if (pattern.test(pw) && pw !== '') {
+		$("#pw").css("visibility","hidden")
+            } else {
+                $("#pw").css("visibility","visible")
+               error_pw = true;
+            }
+         }
+
+
+		  function check_cpw() {
+            var pw = $("#password").val();
+            var cpw = $("#cpassword").val();
+            if (cpw===pw && cpw !== '') {
+		$("#cpw").css("visibility","hidden")
+            } else {
+                 $("#cpw").css("visibility","visible")
+               error_cpw = true;
+            }
+         }
+
+
+         function check_age() {
+            var age = $("#year").val();
 			var mn = $("#month").val();
 			var agev = $("#age");
 			var d = new Date();
@@ -67,130 +144,83 @@
 			var cy=parseInt(n)-parseInt(age)-1;
 			var df=Math.abs(parseInt(am)-parseInt(mn));
 			var dy=(parseFloat(13-df)/10)+cy;
-	 var ra = $("#residence1[type='radio']:checked");
-         var rb = $("#residence2[type='radio']:checked");
-         var ca = $("#checkbox_sample18[type='checkbox']:checked");
-         var cb = $("#checkbox_sample19[type='checkbox']:checked");
-	 var cc = $("#checkbox_sample20[type='checkbox']:checked");
-	 var ay= $("#ay").val();
-		 
-         
-        
-            if (fname !== '') {
-          
-            } else {
-              error_fname = true;
-            }
-         
-
-         
-            if (sname !== '') {
-              
-            } else {
-               error_sname = true;
-            }
-         
-
-
-            if (phpattern.test(phn) && phn !== '') {
-            } else {
-               error_phn = true;
-            }
-         
-
-
-            if (ofpattern.test(ofc) && ofc !== '') {
-
-            } else {
-               error_office = true;
-            }
-         
-
-
-            if (empattern.test(em) && em !== '') {
-
-            } else {
-               error_email = true;
-            }
-         
-
-
-            if (pwpattern.test(pw) && pw !== '') {
-
-            } else {
-               error_pw = true;
-            }
-
-
-
-            if (cpw===pw) {
-
-            } else {
-               error_cpw = true;
-            }
-         
-
-
             if (age !== '1') {
-				
+		$("#dob").css("visibility","hidden")
 				agev.val(dy);
 				
           
             } else {
+               $("#dob").css("visibility","visible")
               error_age = true;
-            }
-         
-
-
-            if (ra.length > 0||rb.length > 0) {
-
-            } else {
-               error_rad = true;
-            }
-         
-
-		 
-            if (ca.length > 0||cb.length > 0 || cc.length > 0){
-
-            } else {
-               error_int = true;
-            }
-
-
-            if (ay !== '') {
-          
-            } else {
-              error_ay = true;
-            }
-         
-
- if (error_fname === true || error_sname === true || error_phn === true || error_office === true || error_email === true || error_pw === true  || error_cpw === true || error_age === true || error_rad === true || error_int === true || error_ay === true) {
-              
-			  if (error_fname === true) {
-               alert("firstname should be filled out!");
-            }else if (error_sname === true) {
-            alert("lastname should be filled out!"); 
-            }else if (error_phn === true) {
-            alert("Please enter valid Phone No!"); 
-            }else if (error_office === true) {
-            alert("Please enter valid office No!"); 
-            }else if (error_email === true) {
-            alert("Please enter valid Email Id!"); 
-            }else if (error_pw === true) {
-            alert("Please enter alphanumeric password, range between 8-12!"); 
-            }else if (error_cpw === true) {
-            alert("Please confirm password!"); 
-            }else if (error_age === true) {
-            alert("please select Date of Birth!"); 
-            }else if (error_rad === true) {
-            alert("Please select gender!"); 
-            }else if (error_int === true) {
-            alert("Please select atleast 1 Interest!"); 
-            }else if (error_ay === true) {
-            alert("Please Write something about You!"); 
             }
          }
 
+
+		 
+		  function check_gen() {
+            var ra = $("#residence1[type='radio']:checked");
+            var rb = $("#residence2[type='radio']:checked");
+            if (ra.length > 0||rb.length > 0) {
+		$("#gn").css("visibility","hidden")
+            } else {
+                $("#gn").css("visibility","visible")
+               error_rad = true;
+            }
+         }
+
+
+		 function check_int() {
+            var ca = $("#checkbox_sample18[type='checkbox']:checked");
+            var cb = $("#checkbox_sample19[type='checkbox']:checked");
+			var cc = $("#checkbox_sample20[type='checkbox']:checked");
+            if (ca.length > 0||cb.length > 0 || cc.length > 0){
+		$("#it").css("visibility","hidden")
+            } else {
+               $("#it").css("visibility","visible")
+               error_int = true;
+            }
+         }
+
+
+		 function check_ay() {
+            var ay= $("#ay").val();
+            if (ay !== '') {
+		$("#aby").css("visibility","hidden")
+            } else {
+                $("#aby").css("visibility","visible")
+              error_ay = true;
+            }
+         }
+
+         
+
+         $("#myForm").submit(function() {
+           		error_fname = false;
+            		error_sname = false;
+			error_phn = false;
+			error_office = false;
+			error_email = false;
+			error_pw = false;
+			error_cpw = false;
+			error_age = false;
+			error_rad = false;
+			error_int = false;
+			error_ay = false;
+           
+
+            		check_fname();
+            		check_lname();
+			check_phone();
+			check_ofc();
+			check_email();
+			check_pw();
+			check_cpw();
+			check_age();
+			check_gen();
+			check_int();
+			check_ay();
+
+            
 
             if (error_fname === false && error_sname === false && error_phn === false && error_office === false && error_email === false && error_pw === false  && error_cpw === false && error_age === false && error_rad === false && error_int === false && error_ay === false) {
                alert("Registration Successfull");
@@ -300,36 +330,43 @@
 						<div class="name_fileds">
 							<label>First Name</label>
 							<input id="firstname" type="text" /> 
+							<input type="text" id="fn" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden; " value="Please enter First name !"/ disabled>
 						</div>
 						<div class="name_fileds">
 							<label>Last Name</label>
 							<input id="lastname" type="text" /> 
+							<input type="text" id="ln" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please enter Last name !"/ disabled>
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="phone_fileds">
 							<label>Phone No</label>
 							<input id="phone" type="text" /> 
+							<input type="text" id="pn" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value=" Please enter valid Phone no !"/ disabled>
 						</div>
 						<div class="phone_fileds">
 							<label>Office No</label>
 							<input id="office" type="text" /> 
+							<input type="text" id="ofn" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please enter valid Office no !"/ disabled>
 						</div>
 					</li>					
 					<li class="fileds">
 						<div class="email_fileds">
 							<label>Email</label>
 							<input id="email" type="text" /> 
+							<input type="text" id="em" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please enter valid Email-ID !"/ disabled>
 						</div>
 						<div class="pass_fileds">
 							<label>Password</label>
 							<input id="password" type="text" /> 
+							<input type="text" id="pw" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please enter alphanumeric Password, range between 8-12 !"/ disabled>
 						</div>
 					</li>
 					<li class="fileds">
 						<div class="pass_fileds">
 							<label>Confirm Password</label>
 							<input id="cpassword" type="text" /> 
+							<input type="text" id="cpw" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please Confirm Password!"/ disabled>
 						</div>
 							<div class="dob_fileds selectbox">
 								<label>My birthdate is</label>
@@ -426,6 +463,7 @@
 											<option value="2021">2021</option>
 										</select>
 									</li>
+									<input type="text" id="dob" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="please select Date of Birth !"/ disabled>
 								</ul>
 							</div>
 					</li>
@@ -437,8 +475,9 @@
 						<div class="gender_fileds">
 							<label>Gender</label>
 							<ul>
-								<li><input type="radio" class="radio" id="residence1" /><label class="radio-label" for="residence1">Male</label></li>
-								<li><input type="radio" class="radio" id="residence2"  /><label class="radio-label" for="residence2">Female</label></li>
+								<li><input type="radio" class="radio" id="residence1" name="radio" /><label class="radio-label" for="residence1">Male</label></li>
+								<li><input type="radio" class="radio" id="residence2" name="radio" /><label class="radio-label" for="residence2">Female</label></li>
+								<input type="text" id="gn" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please select Gender !"/ disabled>
 							</ul>	
 						</div>
 					</li>
@@ -449,11 +488,13 @@
 								<li><input type="checkbox" class="checkbox" id="checkbox_sample18" /> <label class="css-label" for="checkbox_sample18">Biking</label></li>
 								<li><input type="checkbox" class="checkbox" id="checkbox_sample19" /> <label class="css-label" for="checkbox_sample19">Reading</label></li>
 								<li><input type="checkbox" class="checkbox" id="checkbox_sample20" /> <label class="css-label" for="checkbox_sample20">Playing</label></li>
+								<input type="text" id="it" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please select atleast 1 Interest !"/ disabled>
 							</ul>
 						</div>
 						<div class="about_you_fileds">
 						<label>About you</label>
 						<textarea id ="ay"></textarea>
+						<input type="text" id="aby" style="color:red; border-color:transparent; background-color:transparent; visibility:hidden;" value="Please Write something about You !"/ disabled>
 						</div>						
 					</li>
 				</ul>
