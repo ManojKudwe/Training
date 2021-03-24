@@ -119,7 +119,7 @@
 
 			<div class="contect_text">So we can successfully match your details with suitable people, we first need to collect some information about you. Read each question carfully and  select or place a tick in the box for each of your characteristics. Please answer as honestly as you can, otherwise you may be disappointed with your matches and they with you.</div>
 
-			<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+			<form name="myForm" action="partners_preference_form.html" onsubmit="return validateForm()" method="post">
 			<div class="form_container_block">
 				<ul>
 				
@@ -131,7 +131,18 @@
 						</div>
 <script>
 function validateForm()  {
-  var x = document.forms["myForm"]["firstname"].value;
+		 var error_fname = false;
+         var error_sname = false;
+		 var error_phn = false;
+		 var error_office = false;
+		 var error_email = false;
+		 var error_pw = false;
+		 var error_cpw = false;
+		 var error_age = false;
+		 var error_rad = false;
+		 var error_int = false;
+		 var error_ay = false;
+  var fname = document.forms["myForm"]["firstname"].value;
   var lname = document.forms["myForm"]["lastname"].value;
   var ph = document.forms["myForm"]["phone"].value;
   var ofi = document.forms["myForm"]["office"].value;
@@ -160,82 +171,126 @@ function validateForm()  {
   var dy=(parseFloat(13-df)/10)+cy;
 
   
-  if (x==null||x == "") {
-    alert("First Name must be filled out!");
-    return false;
-  }else if(lname==null || lname==""){ 
-  alert("Last Name must be filled out!");
-    return false;
-  }else if(ph==null || ph==""){
-    alert("Phone No must be filled out!");
-    return false;
-  }else if(ph!=null || ph!=""){
-    if(ph.match(phn)){  
-     
-    }else{
-        alert("Invalid Phone No!");
-        return false;
-	     }
-  }
-   if(ofi==null || ofi==""){
-    alert("Office No must be filled out!");
-    return false;
-  }else if(ofi!=null || ofi!=""){
-    if(ofi.match(ofc)){  
-     
-    }else{
-        alert("Invalid Office No!");
-        return false;
-	     }
-  }
-    if(em==null || em==""){
-    alert("Email must be filled out!");
-    return false;
-  }else if(em.match(emf)){
-     
-  }else{
-   alert("You have entered an invalid email address!");
-   return false;
-  }
-   if(pw==null || pw==""){
-   alert("Password must be filled out!");
-   return false;
-  }
-   else if(pw.match(psw)){
-     
-  }else{
-   alert("Please enter alphanumeric password, range between 8-12!");
-   return false;
-  }
-   if(cpw==pw){
-     
-  }
-   else{
-   alert("Please Confirm password!");
-	return false;
-  }
-   if(yr.value=="1"){
-   alert("please select Date of Birth!");
-   return false;
-  }else{
-   ag.value=dy;
-  }
-   if(ra==true || rb==true){
-  }
-   else{
-   alert("Please select gender!");
-   return false;
-  }
-   if(ca==true || cb==true||cc==true){
-  }
-   else{
-   alert("Please select atleast 1 Interest!");
-   return false;
-  }
-   if(tx==null || tx==""){
-   alert("Please write Something about You!");
-   return false;
-  }
+			if (fname !== '') {
+              error_fname = false;
+            } else {
+              error_fname = true;
+            }
+         
+
+         
+            if (lname !== '') {
+              error_sname = false;
+            } else {
+               error_sname = true;
+            }
+         
+
+
+            if (phn.test(ph) && ph !== '') {
+			   error_phn = false;
+            } else {
+               error_phn = true;
+            }
+         
+
+
+            if (ofc.test(ofi) && ofi !== '') {
+			   error_office = false;
+            } else {
+               error_office = true;
+            }
+         
+
+
+            if (emf.test(em) && em !== '') {
+				error_email = false;
+            } else {
+               error_email = true;
+            }
+         
+
+
+            if (psw.test(pw) && pw !== '') {
+				error_pw = false;
+            } else {
+               error_pw = true;
+            }
+
+
+
+            if (cpw===pw) {
+				error_cpw = false;
+            } else {
+               error_cpw = true;
+            }
+         
+
+
+            if (yr.value !== '1') {
+				error_age = false;
+				ag.value=dy;
+				
+            } else {
+              error_age = true;
+            }
+         
+
+
+            if(ra==true || rb==true) {
+               error_rad = false;
+            } else {
+               error_rad = true;
+            }
+         
+
+		 
+            if(ca==true || cb==true||cc==true){
+               error_int = false;
+            } else {
+               error_int = true;
+            }
+
+
+            if (tx !== '') {
+			  error_ay = false;
+            } else {
+              error_ay = true;
+            }
+         
+              
+			if (error_fname === true) {
+            alert("Please enter First name!");
+            }else if (error_sname === true) {
+            alert("Please enter Last name!"); 
+            }else if (error_phn === true) {
+            alert("Please enter valid Phone No!"); 
+            }else if (error_office === true) {
+            alert("Please enter valid office No!"); 
+            }else if (error_email === true) {
+            alert("Please enter valid Email Id!"); 
+            }else if (error_pw === true) {
+            alert("Please enter alphanumeric password, range between 8-12!"); 
+            }else if (error_cpw === true) {
+            alert("Please confirm password!"); 
+            }else if (error_age === true) {
+            alert("please select Date of Birth!"); 
+            }else if (error_rad === true) {
+            alert("Please select Gender!"); 
+            }else if (error_int === true) {
+            alert("Please select atleast 1 Interest!"); 
+            }else if (error_ay === true) {
+            alert("Please Write something about You!"); 
+            }
+         
+
+
+            if (error_fname === false && error_sname === false && error_phn === false && error_office === false && error_email === false && error_pw === false  && error_cpw === false && error_age === false && error_rad === false && error_int === false && error_ay === false) {
+               alert("Registration Successfull");
+               return true;
+            } else {
+               return false;
+            }
    
 }
 </script>
