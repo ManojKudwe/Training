@@ -1,0 +1,59 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProductImagesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('product_images', function (Blueprint $table) {
+            $table->id();
+			$table->string('pimage', 255);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('product_images');
+    }
+}
+
+ public function update(Request $request,$id)
+    {
+        $request->validate([
+            'pname' => 'required',
+            'price' => 'required',
+		 	'pimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+		$upimg='';
+		$product= Product::find($id);
+		$product -> pname = $request('pname');
+		$product -> price = $request('price');
+		$product -> category = $request('category');
+		if($files=$request->file('pimage'))
+		{
+			$path= public_path('/pimg/');
+			$img=date('YmdHis').".".$files->getClientOriginalExtension();
+			$files->move($path,$img);
+			$upimg=$img;
+			$product->pimage = $upimg;
+		}
+		$product->pimage = $upimg;
+		$product->save();
+        
+        return redirect()->route('products.index')
+            ->with('success', 'Product updated successfully');
+    }
