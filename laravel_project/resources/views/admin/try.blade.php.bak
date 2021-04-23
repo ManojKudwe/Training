@@ -1,7 +1,0 @@
-@extends('admin.layout.app')
-
-
-@section('content')
-  <strong style=" color:blue; size:50px ">welcome {{$user->firstname}} ( {{$user->email}})</strong>
- 
-@endsection
