@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+ <head>
+ <style>
+
+a:link {
+  color: #666600;
+}
+
+a:hover {
+  color: #adff2f;
+}
+
+</style>
+
+  <link rel="stylesheet" href="css\as.css">
+
+ </head>
+ <body>
+
+<p id= head> Call Us Today! (02)9017 8413</p>
+
+
+    <form action="/action_page.php">
+      <input type="text" placeholder=""   style="border-radius: 5px; " id="search-container" name="search">  
+    </form>
+  
+ <div class="logo"  >
+<a href="assignment-1.html"><img src="img/logo.png" width=300px; height=115px; alt="" title="logo" /></a>
+</div>	
+
+
+
+				       <nav id="nav-menu-container">
+				        <ul class="nav-menu" style="list-style: none" ;>
+						  <li><a style="" href="contact.html">Contact Us</a></li>
+						  <li><a style="" href="rev.html">Reviews</a></li>
+						  <li><a style="" href="wv.html">Why Vital</a></li>
+						  <li><a style="" href="wwh.html">Who We Help</a></li>
+						  <li><a style="" href="dating.html">Dating Blog</a></li>
+				          <li class="menu-active"><a style="" href="assignment-1.html">Home</a></li> 	          				          
+				        </ul>
+				      </nav>	
+ 
+ <hr id=bar style="height:85px; width:100%; color:#b0b0b0; background-color:#b0b0b0">
+
+<form method="get" action="">
+<button class="button button1"  style="height:45px; width:170px; ">Download Now</button>
+</form>
+
+<img src="img/icon5.png" width=50px; height=67px; id="icon" title="" />
+
+<p id="bart">Lorem Ipsum is simply dummy text of the printing ind.</p>
+
+<img src="img/hbg2.png" width=100%; height=420px; id="hbg" title="" />
+
+
+<form method="get" action="">
+<button class="button2"  style="height:80px; width:120px;  "><img src="img/video-play-btn.png" id="vid"></button>
+</form>
+
+<div class="oi">
+<p id="">Lorem ipsum dolor sit posuer<br>long dolor sit amet.<br>It has survived not on?</p>
+</div>
+
+<form method="get" action="">
+<button class="button3"  style="height:55px; width:240px;  ">Contact Us Now! <img src="img/icon1.png" id="cu" ></button>
+</form>
+
+ <img src="img/girl.png" id="gl" >
+
+<div class="aboutus">
+
+<p id="h1">About Us</p><p id="h2"><b>It is a long established fact that a<br> reader will be distracted<b></p>
+<p><b><div class="text">The point of using Lorem Ipsum is<b>that it has a more-or-less normal<br> bution of letters, 
+as oppose to using Content here, making<br> look like readable English<br><br><b>There are many variations of passage of<b>Lorem Ipsum available, but the<br>majority have suffered alteration in some form<br><br></div>
+<p id="h3">
+<b><img src="img/arrow1.png" id="cu" >  2000 years old Richard McClint<b><br>
+<b><img src="img/arrow1.png" id="cu" >  Discovered the undoubtable source<b><br>
+<b><img src="img/arrow1.png" id="cu" >  Lorem ipsum dolor sit amet<b><br><br>
+</p>
+<div class="text">
+remaining essentially unchanged it was popularised in the 1960s with<br> the release Letraset sheets containing
+</div>
+</p>
+<form method="get" action="">
+<button class="button4"  style="height:45px; width:210px;  ">Contact Us Now! <img src="img/icon1.png" id="cu" ></button>
+</form>
+</div>
+
+   	
+ <div id="" class="dbi">
+<img src="img/tooltip-bg.png" onmouseover="imagefun()" onmouseout="normalImg()"  id="getImage">
+<img src="img/dotted-line.png"id="dotline">
+<img src="img/tooltip-bg.png" onmouseover="imagefuna()" onmouseout="normalImga()" id="getImagea">
+<img src="img/dotted-line.png"id="dotline1">
+<img src="img/tooltip-bg.png" onmouseover="imagefunb()" onmouseout="normalImgb()" id="getImageb">
+<img src="img/dotted-line.png"id="dotline2">
+<img src="img/tooltip-bg.png" onmouseover="imagefunc()" onmouseout="normalImgc()" id="getImagec">
+<img src="img/dotted-line.png"id="dotline3">
+<img src="img/tooltip-bg.png" onmouseover="imagefund()" onmouseout="normalImgd()" id="getImaged">
+<img src="img/hbg5.png" style="width:100%" id="hb">
+ </div>
+    <script>
+        function imagefun() {
+			var modal = document.getElementById("myModal");
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("tooltip-bg.png")) {
+                Image_Id.src = "tooltip-hover.png";
+				modal.style.display = "block";
+			}
+			}
+		function normalImg() {
+			var modal = document.getElementById("myModal");
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("tooltip-hover.png")) {
+                Image_Id.src = "tooltip-bg.png";
+				modal.style.display = "none";
+        }
+		}
+    </script>
+
+	 <script>
+        function imagefuna() {
+			var modal = document.getElementById("myModala");
+            var Image_Id = document.getElementById('getImagea');
+            if (Image_Id.src.match("tooltip-bg.png")) {
+                Image_Id.src = "tooltip-hover.png";
+				modal.style.display = "block";
+			}
+			}
+		function normalImga() {
+			var modal = document.getElementById("myModala");
+            var Image_Id = document.getElementById('getImagea');
+            if (Image_Id.src.match("tooltip-hover.png")) {
+                Image_Id.src = "tooltip-bg.png";
+				modal.style.display = "none";
+        }
+		}
+    </script>
+
+ <script>
+        function imagefunb() {
+			var modal = document.getElementById("myModalb");
+            var Image_Id = document.getElementById('getImageb');
+            if (Image_Id.src.match("tooltip-bg.png")) {
+                Image_Id.src = "tooltip-hover.png";
+				modal.style.display = "block";
+			}
+			}
+		function normalImgb() {
+			var modal = document.getElementById("myModalb");
+            var Image_Id = document.getElementById('getImageb');
+            if (Image_Id.src.match("tooltip-hover.png")) {
+                Image_Id.src = "tooltip-bg.png";
+				modal.style.display = "none";
+        }
+		}
+    </script>
+
+	 <script>
+        function imagefunc() {
+			var modal = document.getElementById("myModalc");
+            var Image_Id = document.getElementById('getImagec');
+            if (Image_Id.src.match("tooltip-bg.png")) {
+                Image_Id.src = "tooltip-hover.png";
+				modal.style.display = "block";
+			}
+			}
+		function normalImgc() {
+			var modal = document.getElementById("myModalc");
+            var Image_Id = document.getElementById('getImagec');
+            if (Image_Id.src.match("tooltip-hover.png")) {
+                Image_Id.src = "tooltip-bg.png";
+				modal.style.display = "none";
+        }
+		}
+    </script>
+
+	 <script>
+        function imagefund() {
+			var modal = document.getElementById("myModald");
+            var Image_Id = document.getElementById('getImaged');
+            if (Image_Id.src.match("tooltip-bg.png")) {
+                Image_Id.src = "tooltip-hover.png";
+				modal.style.display = "block";
+			}
+			}
+		function normalImgd() {
+			var modal = document.getElementById("myModald");
+            var Image_Id = document.getElementById('getImaged');
+            if (Image_Id.src.match("tooltip-hover.png")) {
+                Image_Id.src = "tooltip-bg.png";
+				modal.style.display = "none";
+        }
+		}
+    </script>
+
+<p id="hvw">How Vital  Works</p>
+<p id="sh">Step, Hop Or Skip Your Way To Happiness</p>
+
+
+
+<div id="myModal" class="modal">
+
+
+  <div class="modal-content">
+    <p> Log IN </p>
+  </div>
+
+</div>
+
+
+<div id="myModala" class="modala">
+
+
+  <div class="modal-contenta">
+    <p> Take Appointment </p>
+  </div>
+
+</div>
+
+
+<div id="myModalb" class="modalb">
+
+
+  <div class="modal-contentb">
+    <p>Pop into Our Office and Meet Us Face to Face</p>
+  </div>
+
+</div>
+
+
+<div id="myModalc" class="modalc">
+
+
+  <div class="modal-contentc">
+    <p> HOP </p>
+
+ </div>
+
+</div>
+
+
+<div id="myModald" class="modald">
+
+
+  <div class="modal-contentd">
+    <p> SKIP </p>
+  </div>
+
+</div>
+
+
+<img src="img/bbg1.png" width=100%; height=670px; id="bbg" title="" />
+	
+<p id="dum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has<br>been the industry standards ever since the 1500s, when an unknown printer took a<br> galley of type and scrambled it to make a type specimen book</p>
+
+<img src="img/white.png" width=370px; height=480px; id="wh" title="" />
+
+<img src="img/icon2.png" width=70px; height=70px; id="li" title="" />
+
+<p id="ttl">What is Lorem Ipsum?</p>
+
+<p id="dum1">Lorem Ipsum is simply dummy text of the <br> and typesetting industry Lorem Ipsum has been the<br>  industry standards dummy text ever since <br>the 1500s, when an unknown printer <br> took a galley of type and scrambled <br> <br> it to make a type specimen book it has survived<br>not only five centuries, but also the leap into we<br> electronic typesetting, remaining essentially<br> unchanged</p>
+
+<form method="get" action="">
+<button class="button5"  style="height:35px; width:200px;  ">Get Started <img src="img/icon4.png" id="gi" ></button>
+</form>
+
+<img src="img/white.png" width=370px; height=480px; id="wh1" title="" />
+
+<img src="img/icon3.png" width=70px; height=70px; id="li1" title="" />
+
+<p id="ttl1">Where does it come?</p>
+
+<p id="dum2">it has survived not only five centuries, but <br> also the leap into we electronic typesetting, remain-<br>ing essentially unchanged popularised<br><br>Contrary to popular belief. Lorem <br>Ipsum is not simply random text. it has<br> Iroots in a piece of classic latin literature from <br>45 BC, making it over 2000 years old. number Is<br> this Richard McClintock?</p>
+ 
+
+<form method="get" action="">
+<button class="button6"  style="height:35px; width:200px;  ">Get Started <img src="img/icon4.png" id="gi" ></button>
+</form>
+ 
+<img src="img/clients_comment_bg.png" width=100%; height=520px; id="bbg1" title="" />
+
+<p id="wocs">What Our Clients Say</p>
+
+
+<img src="img/tooltip-bg.png" width=160px; height=160px; id="avtc" title="" />
+<img src="img/girl.png" width=130px; height=120px; id="avti" title="" />
+<img src="img/prev_btn.png" onclick="imagepre()" width=21px; height=27px; id="avt1" title="" />
+<img src="img/next_btn.png" onclick="imagenex()" width=21px; height=27px; id="avt2" title="" />
+<p id="wcs">Lorem Ipsum is simply dummy text of the and typesetting industry Lorem Ipsum has been the<br>the industry standards dummy text ever since the 1500s, when an unknown printer took a galley of<br> type and scrambled it to make a type specimen book it has survived not only </p>
+
+<p id="ath">- MT. Chatswood</p>
+
+<script>
+        function imagenex() {
+            var Image_Id = document.getElementById('avti');
+            if (Image_Id.src.match("avth.png")) {
+                Image_Id.src = "girl.png";
+				document.getElementById("ath").innerHTML = "- MT. Chatswood";
+				}
+			else if (Image_Id.src.match("girl.png")) {
+                Image_Id.src = "avtj.png";
+				document.getElementById("ath").innerHTML = "- Renee";
+				}
+			else if (Image_Id.src.match("avtj.png")) {
+                Image_Id.src = "avth.png";
+				document.getElementById("ath").innerHTML = "- Sasha";
+				}
+			}
+		function imagepre() {
+			var Image_Id = document.getElementById('avti');
+            if (Image_Id.src.match("girl.png")) {
+                Image_Id.src = "avth.png";
+				document.getElementById("ath").innerHTML = "- Sasha";
+
+				}
+			else if (Image_Id.src.match("avtj.png")) {
+                Image_Id.src = "girl.png";
+				document.getElementById("ath").innerHTML = "- MT. Chatswood";
+				}
+			else if (Image_Id.src.match("avth.png")) {
+                Image_Id.src = "avtj.png";
+				document.getElementById("ath").innerHTML = "- Renee";
+				}
+		}
+    </script>
+<div class="blog">
+<p id="olbp" >Our Latest Blog Posts</p>
+	<img src="img/user1.png" width=260px; height=160px; id="us1" title="" />
+	<img src="img/user2.png" width=260px; height=160px; id="us2" title="" />
+	<img src="img/user3.png" width=260px; height=160px; id="us3" title="" />
+</div>
+<div class="op">
+<p id="olbp1" ><a style="" href="blog.html">Duis eget leo sit amet orci suscipit<br> lacinia neque</a><br><br>Contrary to popular belief, Lorem Ipsum<br> is not simply random text. it has roots<br> in a piece of classical Latin literature <br>from 45 BC, making it over 2000 years<br>old Richard McClintock.</p>
+
+<p id="olbp2" ><a style="" href="blog.html">Duis eget leo sit amet orci suscipit<br> lacinia neque</a><br><br>Contrary to popular belief, Lorem Ipsum<br> is not simply random text. it has roots<br> in a piece of classical Latin literature <br>from 45 BC, making it over 2000 years<br>old Richard McClintock.</p>
+
+<p id="olbp3" ><a style="" href="blog.html">Duis eget leo sit amet orci suscipit<br> lacinia neque</a><br><br>Contrary to popular belief, Lorem Ipsum<br> is not simply random text. it has roots<br> in a piece of classical Latin literature <br>from 45 BC, making it over 2000 years<br>old Richard McClintock.</p>
+</div>
+
+<div class="bt">
+<form method="get" action="">
+<button class="button7"  style="height:35px; width:130px;  ">Read More</button>
+</form>
+<form method="get" action="">
+<button class="button8"  style="height:35px; width:130px;  ">Read More</button>
+</form>
+<form method="get" action="">
+<button class="button9"  style="height:35px; width:130px;  ">Read More</button>
+</form>
+</div>
+ 
+ <div class="lsb">
+  <hr id="bar1" style="height:85px; width:100%; color:#b0b0b0; background-color:#b0b0b0">
+
+<form method="get" action="">
+<button class="buttonl buttonl1"  style="height:45px; width:170px; ">Download Now</button>
+</form>
+
+<img src="img/icon5.png" width=50px; height=67px; id="iconl" title="" />
+
+<p id="bartl">simply dummy text of the </p>
+ </div>
+
+ <div class="footer">
+ <hr id="barf" style="height:530px; width:100%; color:#404040; background-color:#404040">
+ <a href="assignment-1.html"><img src="img/foot_logo.png" width=260px; height=60px; id="iconf" title="" /></a>
+ <h1>Call Us Today! (02) 9017 8413</h1>
+ <p id="rightf">Shortcut your search to happiness right now.<br>Live a life without regrets and take action today!</p>
+ <form method="get" action="">
+<button class="buttonf1"  style="height:50px; width:210px;  ">Book an Appointment <img src="img/icon7.png" id="f1" ></button>
+</form>
+<form method="get" action="">
+<button class="buttonf"  style="height:50px; width:210px;  ">Contact a Consultant <img src="img/icon6.png" id="f2" ></button>
+</form>
+ <hr id="barf1" style="height:60px; width:100%; color:#000000; background-color:#000000">
+ <hr id="barf2" style="height:20px; width:100%; color:#ffffff; background-color:#ffffff">
+</div>
+
+
+<p id="fl">CONTACT INFO</p>
+<p id="fl1">RECENT POSTS</p>
+<p id="fl2">RECENT TWEETS</p>
+
+<div class="cpt">
+
+<div class="nk1">
+<span>4/220 George St, Sydney NSW 2000</span>
+<p>Phone: (02) 9017 8413<br>
+Email: <a href="mailto:info@syd.vitalpartners.com.au" target="_blank">info@syd.vitalpartners.com.au</a></p>
+<span>Canberra City Act 2600 </span>
+<p>Phone: (02) 9017 8426<br>
+Email: <a href="mailto:can@syd.vitalpartners.com.au" target="_blank">can@syd.vitalpartners.com.au</a></p>
+</div>
+
+
+<div class="nk2">
+<p><a href="#">&#9656; How to Recover After a Bad Date</a></p>
+<p><a href="#">&#9656; Review | Vital Partners Review</a></p>
+<p><a href="#">&#9656; Review | Vital Partners Review</a></p>
+<p><a href="#">&#9656; Review | Vital Partners Derek and Julie</a></p>
+<p><a href="#">&#9656; 7 Rules for a Happy Relationship | Vital</a></p>
+</div>
+
+<img src="img/icon9.png" width=20px; height=20px; id="t1" title="t1" />
+<img src="img/icon9.png" width=20px; height=20px; id="t2" title="t2" />
+	
+<div class="nk3">
+<p>Are you being vulnerable to find love? via offline<br>dating agency Sydney Canberra Vital Partners </p> 
+<p><a  href="#">http://t.co/hGCgHEU6If</a><br>1 week ago</p>
+					                     
+<p><br>Ending a relationship? read why you shouldn't<br>break up by text - offline dating agency vital<br>Partners Sydney Canberra </p> 
+<p><a  href="#">http://t.co/hGCgHEU6If</a><br>1 week ago</p>
+</div>
+
+</div>
+
+<div class="lc">
+<div class="lc1">
+<p id="le1">&#169; VitalPartners.com.au<p>
+</div>
+
+<div class="lc2">
+<p id="le2"><a href="contact_us.html">Contact</a> |  <a href="terms_of_use.html">Terms of Use</a> |   <a href="privacy_policy.html">Privacy Policy</a> |  <a href="disclaimer.html">Disclaimer</a><p>
+</div>
+
+<p id="fu">FOLLOW US:</p>
+
+<a href="#"><img src="img/icon10.png" width=20px; height=20px; id="iconfb" title="" /></a>
+<a href="#"><img src="img/icon11.png" width=20px; height=20px; id="icontw" title="" /></a>
+<a href="#"><img src="img/icon12.png" width=20px; height=20px; id="iconlk" title="" /></a>
+<a href="#"><img src="img/icon13.png" width=20px; height=20px; id="iconyt" title="" /></a>
+<a href="#"><img src="img/icon14.png" width=20px; height=20px; id="icongl" title="" /></a>
+
+<p  id="ll1"><a href="#">Who Designed This Site?</a></p> 
+<p  id="ll2"><a href="#">Who  Built This Site?</a><p>
+
+
+</body>
+</html>
